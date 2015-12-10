@@ -18,10 +18,19 @@ for iter = 1:num_iters
     %
 
 
+delta= zeros(size(X,2), 1);
 
 
+for i = 1:m
+  
+  delta = delta + ((theta'*X(i,:)'-y(i, : )')*X(i,:))';
+  
+endfor
+
+delta= alpha/m * delta;
 
 
+theta = theta - delta;
 
 
 

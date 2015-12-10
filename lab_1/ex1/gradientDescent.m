@@ -39,6 +39,6 @@ theta = theta - deltaVector;
     J_history(iter) = computeCost(X, y, theta);
 endfor
 
-J_history(iter) = computeCost(X, y, theta)
+J_history(iter) = computeCost(X, y, theta);
 
 end
