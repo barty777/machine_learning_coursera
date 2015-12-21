@@ -19,6 +19,9 @@ grad = zeros(size(theta));
 
 
 
+thetaVector = theta(2:length(theta));
+grad=1/m*((sigmoid(theta'*X')-y')*X)' + [0;(lambda/m)*thetaVector];
+J=1/m*(-y'*log(sigmoid((theta'*X')')) - (1-y')*log(1-sigmoid((theta'*X')'))) + lambda/(2*m)*sum(thetaVector.^2);
 
 
 
