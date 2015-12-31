@@ -1,0 +1,110 @@
+\documentclass{article}
+\title{Machine Learning Course Notes\\Stanford -- Coursera}
+\date{29-12-2015}
+\author{Bartol Freskura}
+
+% packages
+\usepackage{lmodern} % load a font with all the characters
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage[ruled]{algorithm2e}
+\usepackage{geometry}
+\usepackage{listings}
+\geometry{legalpaper, portrait, margin=1.2in}
+
+\begin{document}
+% \renewcommand*\rmdefault{phv} %Font change
+
+\pagenumbering{gobble}
+\maketitle
+\newpage
+
+
+\tableofcontents
+\pagenumbering{arabic}
+\newpage
+
+
+\section{Week 5}
+\bigskip
+
+\subsection{Cost Function and Backpropagation}
+
+\bigskip
+
+\subsubsection{Cost Function for neural networks}
+
+\begin{align*}
+&J(\Theta)=-\frac{1}{m}\left[\sum\limits_{i=1}^m \sum\limits_{k=1}^K =
+			     y{_k^{(i)}}\log({h(x^{(i)})}) +
+			     (1+ y{_k^{(i)}})\log{(1-(h(x^{(i)}))_k)}\right]+
+			     \frac{\lambda}{2m}\sum\limits_{l=1}^{L-1}\sum
+			     \limits_{i=1}^{s_l}\sum\limits_{j=1}^{s_{l+1}}
+			     {\left(\theta{_{ji}^{(l)}} \right)}^2
+\end{align*}
+
+\subsubsection{Calculating cost error}
+
+\begin{center}
+$\delta{_j^{(L)}} = a{_j^{(L)}} - y_j$ --- error of node $j$ in layer $L$\\
+$g'(z) = \frac{1}{1+e^{-z}}.*\left(1-\frac{1}{1+e^{-z}}\right)$ --- derivation\\
+$\delta^{(L-1)} = (\theta^{{(L-1)}})^T\delta^{(L)}.*g'(z^{(L-1)}) $  --- error vector 
+for level 
+$L-1$
+\end{center}
+
+\subsubsection{Backpropagation algorithm}
+\begin{algorithm}
+Training set --- $\left\{(x^{(1)}, y^{(1)}),\dotsc, (x^{(m)}, y^{(m)})\right\}$\\
+Set gradient --- $\Delta{_{ij}^{(l)}} = 0$ for all $l, i, j$\medskip\\
+\For{$i=1$ to $m$}{
+  
+  Set $a^{(1)}=x^{(i)}$\smallskip
+  
+  Perform forward propagation to compute $a^{(l)}$ for $l=2,3,\dotsc,L$\smallskip
+  
+  Using $y^{(i)}$ compute $\delta^{(i)}=a^{(L)} - y^{(i)}$\smallskip
+  
+  Compute $\delta^{(L-1)}, \delta^{(L-2)}, \delta^{(L-3)}, \dotsc, \delta^{(2)}$\smallskip
+  
+  $\Delta{_{ij}^{(l)}} =  \Delta{_{ij}^{(l)}} +  a^{(l)}_j\delta^{(l+1)}_i$\smallskip
+}
+\caption{Backpropagation\label{IR}}
+\end{algorithm}
+
+\subsubsection{Gradient Checking}
+Suppose you have a funciton $f_{i}(\theta)$ that computes 
+$\frac{\partial}{\partial\theta_{i}}J(\theta)$; you'd like to check if $f_i$ is outputting correct 
+derivative values.
+
+\begin{align*}
+\text{Let } \theta^{(i+)} = \theta +
+\begin{bmatrix}
+0\\
+0\\
+\vdots\\
+\epsilon\\
+\vdots\\
+0\\
+\end{bmatrix}
+\indent\text{ and } \theta^{(i-)} = \theta -
+\begin{bmatrix}
+0\\
+0\\
+\vdots\\
+\epsilon\\
+\vdots\\
+0\\
+\end{bmatrix}
+\end{align*}
+You can now numerically verify $f_i(\theta)$’s correctness by checking, for each
+$i$, that:
+\begin{align*}
+f_i(\theta)=\frac{J(\theta^{(i+)})-J(\theta^{(i-)})}{2\epsilon}
+\end{align*}
+
+\newpage
+
+
+
+\end{document}
