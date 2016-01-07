@@ -1,7 +1,10 @@
 # Machine Learning Online Course (Stanford)
 
+### Author
+Bartol Freškura
+
 ### Applying patch for Octave 4.0
-1. Extract the contents of this zip file to the "machine-learning-ex?/ex?/" folder 
+1. Extract the contents of this zip file to the "machine-learning-ex?/ex?/" folder
 for each programming exercise.  Be sure you preserve the folder attributes and the
 other files in that subfolder.  
 This patch will overwrite these two existing files:

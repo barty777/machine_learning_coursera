@@ -221,22 +221,8 @@ A large neural network with more parameters is prone to overfitting. It is also 
 expensive. In this case you can use regularization (increase $\lambda$) to address the overfitting.
 
 \subsection{Handling Skewed Data}
-\paragraph{Precision:} $\frac{True\ positive}{True\ positive + False\ positive}$
-\paragraph{Recall:} $\frac{True\ positive}{True\ positive + False\ negative}$
-
-\begin{center}
-\begin{tabular}{ r|c|c| }
-\multicolumn{1}{r}{}
- &  \multicolumn{1}{c}{1}
- & \multicolumn{1}{c}{0} \\
-\cline{2-3}
-1 & True Positive & False positive \\
-\cline{2-3}
-0 & False Negative & True negative \\
-\cline{2-3}
-\end{tabular}
-\end{center}
-
+\paragraph{Precision:} $\frac{True\ positive}{True\ positive + False_positive}$
+\paragraph{Recall:} $\frac{True_positive}{True_positive + False_negative}$
 
 
 

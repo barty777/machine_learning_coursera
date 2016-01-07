@@ -4,3 +4,15 @@
 \contentsline {subsubsection}{\numberline {1.1.2}Calculating cost error}{2}
 \contentsline {subsubsection}{\numberline {1.1.3}Backpropagation algorithm}{2}
 \contentsline {subsubsection}{\numberline {1.1.4}Gradient Checking}{2}
+\contentsline {section}{\numberline {2}Week 6}{3}
+\contentsline {subsection}{\numberline {2.1}Evaluating a Learning Algorithm}{3}
+\contentsline {paragraph}{Machine learning diagnostic:}{3}
+\contentsline {paragraph}{Error with model selection with degree $d$:}{3}
+\contentsline {paragraph}{Solution to this problem:}{3}
+\contentsline {subsection}{\numberline {2.2}Bias vs. Variance}{3}
+\contentsline {paragraph}{High Bias:}{3}
+\contentsline {paragraph}{High Variance:}{4}
+\contentsline {subsubsection}{\numberline {2.2.1}Diagnosing neural networks}{4}
+\contentsline {subsection}{\numberline {2.3}Handling Skewed Data}{4}
+\contentsline {paragraph}{Precision:}{4}
+\contentsline {paragraph}{Recall:}{4}
